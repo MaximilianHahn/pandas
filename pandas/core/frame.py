@@ -7541,6 +7541,9 @@ class DataFrame(NDFrame):
 
         if constructor is None:
             result = Series(result, index=labels)
+        else:
+            result = constructor(result, index=labels)
+            
         return result
 
     def nunique(self, axis=0, dropna=True):
