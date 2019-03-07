@@ -7539,7 +7539,7 @@ class DataFrame(NDFrame):
                 if axis == 0:
                     result = coerce_to_dtypes(result, self.dtypes)
 
-        if constructor is not None:
+        if constructor is None:
             result = Series(result, index=labels)
         return result
 
